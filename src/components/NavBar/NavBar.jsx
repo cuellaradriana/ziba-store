@@ -1,29 +1,44 @@
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
         <nav className="flex justify-between gap-5 p-4 bg-pink-300">
-            <h2 className="text-4xl font-bold text-white">Ziba Store</h2>
+            <Link to="/" className="text-4xl font-bold text-white">
+                Ziba Store
+            </Link>
             <ul className="flex space-x-4">
                 <li>
-                    <button className="p-2 font-bold text-white bg-inherit hover:bg-white hover:text-pink-600 hover:rounded-md">
+                    <Link
+                        to="/category/lazos"
+                        className="p-2 font-bold text-white bg-inherit hover:bg-white hover:text-pink-600 hover:rounded-md"
+                    >
                         Lazos
-                    </button>
+                    </Link>
                 </li>
                 <li>
-                    <button className="p-2 font-bold text-white bg-inherit hover:bg-white hover:text-pink-600 hover:rounded-md">
+                    <Link
+                        to="/category/vinchas"
+                        className="p-2 font-bold text-white bg-inherit hover:bg-white hover:text-pink-600 hover:rounded-md"
+                    >
                         Vinchas
-                    </button>
+                    </Link>
                 </li>
                 <li>
-                    <button className="p-2 font-bold text-white bg-inherit hover:bg-white hover:text-pink-600 hover:rounded-md">
+                    <Link
+                        to="/category/colitas"
+                        className="p-2 font-bold text-white bg-inherit hover:bg-white hover:text-pink-600 hover:rounded-md"
+                    >
                         Colitas
-                    </button>
+                    </Link>
                 </li>
                 <li>
-                    <button className="p-2 font-bold text-white bg-inherit hover:bg-white hover:text-pink-600 hover:rounded-md">
+                    <Link
+                        to="/category/lentes"
+                        className="p-2 font-bold text-white bg-inherit hover:bg-white hover:text-pink-600 hover:rounded-md"
+                    >
                         Lentes
-                    </button>
+                    </Link>
                 </li>
             </ul>
             <CartWidget />
