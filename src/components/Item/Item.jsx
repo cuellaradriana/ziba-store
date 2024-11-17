@@ -5,7 +5,7 @@ const Item = ({ product }) => {
     return (
         <div className="flex flex-col items-center justify-center gap-3 p-3 bg-pink-100 w-80 rounded-xl">
             <img
-                src={product.pictureURL}
+                src={product.image}
                 alt={product.title}
                 width={300}
                 className="rounded-xl"

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <nav className="flex justify-between gap-5 p-4 bg-pink-300">
+        <nav className="flex items-center justify-between gap-5 p-4 bg-pink-300">
             <Link to="/" className="text-4xl font-bold text-white">
                 Ziba Store
             </Link>

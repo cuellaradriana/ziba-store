@@ -1,15 +1,22 @@
 import { IoMdCart } from 'react-icons/io';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
+    const { totalQuantity } = useContext(CartContext);
+    const quantity = totalQuantity();
     return (
-        <div>
+        <Link to="/cart">
             <div className="flex items-end">
                 <IoMdCart className="text-4xl text-pink-800" />
-                <span className="px-2 py-1 -ml-2 text-xs font-bold text-pink-800 bg-white rounded-full hover:bg-pink-800 hover:text-white">
-                    3
-                </span>
+                {quantity >= 1 && (
+                    <span className="flex items-center justify-center w-5 h-5 text-xs font-bold text-pink-800 bg-pink-100 rounded-full hover:bg-pink-800 hover:text-white">
+                        {quantity}
+                    </span>
+                )}
             </div>
-        </div>
+        </Link>
     );
 };
 

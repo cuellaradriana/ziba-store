@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { getProducts } from '../../utils/asyncMock';
 import { useParams } from 'react-router-dom';
+import db from '../../db/db';
+import { doc, getDoc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
     const { idProduct } = useParams();
-    useEffect(() => {
-        getProducts().then((data) => {
-            const findProduct = data.find(
-                (product) => product.id === idProduct
-            );
-            setProduct(findProduct);
+
+    const getProductById = () => {
+        const docRef = doc(db, 'products', idProduct);
+        getDoc(docRef).then((dataDb) => {
+            const productDb = { id: dataDb.id, ...dataDb.data() };
+            setProduct(productDb);
         });
-    }, []);
+    };
+    useEffect(() => {
+        getProductById(idProduct);
+    }, [idProduct]);
 
     return (
         <div className="w-full p-10">

@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
 import { FaMinus, FaPlus } from 'react-icons/fa6';
 
-const ItemCount = ({ initial, stock }) => {
-    const [quantity, setQuantity] = useState(initial);
-    const [currentStock, setCurrentStock] = useState(stock);
+const ItemCount = ({ stock, onAdd }) => {
+    const [quantity, setQuantity] = useState(1);
 
-    const increment = () => {
-        if (quantity < currentStock) {
+    const handleIncrement = () => {
+        if (quantity < stock) {
             setQuantity(quantity + 1);
         }
     };
 
-    const decrement = () => {
+    const handleDecrement = () => {
         if (quantity > 1) {
             setQuantity(quantity - 1);
         }
-    };
-
-    const onAdd = (quantity) => {
-        console.log(`Ha añadido ${quantity} unidades`);
-        let newStock = currentStock - quantity;
-        setCurrentStock(newStock);
-        console.log(`Stock actual ${newStock}`);
     };
 
     return (
@@ -29,15 +21,15 @@ const ItemCount = ({ initial, stock }) => {
             <div className="flex items-center justify-between w-1/2 gap-2 px-5 py-2 bg-pink-300 rounded-xl">
                 <button
                     className="flex items-center justify-center p-2 font-bold rounded-full hover:bg-pink-600 hover:text-white"
-                    onClick={decrement}
+                    onClick={handleDecrement}
                 >
                     <FaMinus />
                 </button>
                 <span>{quantity}</span>
                 <button
                     className="flex items-center justify-center p-2 font-bold rounded-full hover:bg-pink-600 hover:text-white"
-                    onClick={increment}
-                    disabled={quantity >= currentStock}
+                    onClick={handleIncrement}
+                    disabled={quantity >= stock}
                 >
                     <FaPlus />
                 </button>
@@ -45,7 +37,7 @@ const ItemCount = ({ initial, stock }) => {
             <div className="w-1/2">
                 <button
                     onClick={() => onAdd(quantity)}
-                    disabled={!currentStock || quantity > currentStock}
+                    disabled={!stock || quantity > stock}
                     className="px-5 py-3 font-medium bg-pink-300 rounded-xl hover:bg-pink-600 hover:text-white"
                 >
                     Agregar al carrito
