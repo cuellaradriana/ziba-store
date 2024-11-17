@@ -40,7 +40,7 @@ Ziba Store utiliza un stack moderno de herramientas y tecnologías:
 ## Instalación
 
 1. Clona el repositorio:
-   git clone https://github.com/tuusuario/ziba-store.git
+   git clone [https://github.com/tuusuario/ziba-store.git](https://github.com/cuellaradriana/ziba-store)
    cd ziba-store
 
 2. Instala las dependencias:
