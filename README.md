@@ -59,21 +59,6 @@ Visualiza los detalles de cada producto haciendo clic en ellos.
 Agrega productos al carrito y revisa tu selección.
 Completa el formulario de compra para generar una orden.
 
-## Estructura del proyecto
-
-ziba-store/
-├── public/ # Archivos estáticos
-├── src/
-│ ├── components/ # Componentes reutilizables
-│ ├── pages/ # Vistas principales de la aplicación
-│ ├── styles/ # Archivos de estilo
-│ ├── utils/ # Utilidades y helpers
-│ ├── App.jsx # Componente raíz
-│ └── main.jsx # Entrada principal de la aplicación
-├── tailwind.config.js
-├── vite.config.js
-└── package.json
-
 ## Contribuciones
 
 ¡Las contribuciones son bienvenidas! Si tienes ideas o mejoras, no dudes en crear un issue o enviar un pull request.
