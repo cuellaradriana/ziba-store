@@ -40,16 +40,16 @@ Ziba Store utiliza un stack moderno de herramientas y tecnologías:
 ## Instalación
 
 1. Clona el repositorio:
-   git clone [https://github.com/tuusuario/ziba-store.git](https://github.com/cuellaradriana/ziba-store)
+   git clone [https://github.com/cuellaradriana/ziba-store.git](https://github.com/cuellaradriana/ziba-store)
    cd ziba-store
 
-2. Instala las dependencias:
+3. Instala las dependencias:
    npm install
 
-3. Inicia la aplicación:
+4. Inicia la aplicación:
    npm run dev
 
-4. Abre http://localhost:5173 para ver la aplicación en tu navegador.
+5. Abre http://localhost:5173 para ver la aplicación en tu navegador.
 
 ## Uso
 
